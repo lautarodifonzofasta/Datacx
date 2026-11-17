@@ -20,7 +20,9 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      /* Solo las cachés propias: en lautarodifonzofasta.github.io conviven otras
+         apps (El Libro de Guardia) y sus cachés no son nuestras. */
+      .then(ks => Promise.all(ks.filter(k => k.startsWith('datacx-') && k !== CACHE).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
