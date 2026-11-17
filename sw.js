@@ -4,7 +4,7 @@
      Así, cada vez que subís una versión nueva a la misma URL, los teléfonos
      la reciben en la próxima apertura con señal — sin reinstalar nada.
    - Resto de archivos: caché primero con actualización en segundo plano. */
-const CACHE = 'datacx-v2';
+const CACHE = 'datacx-v3';
 const ASSETS = [
   './', './index.html', './css/styles.css',
   './js/library.js', './js/schemas.js', './js/db.js', './js/xlsxio.js',
